@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 
-export class MessageRepository {
+export class MessagesRepository {
   async findOne(id: string) {
     return this.findAll()[id];
   }
@@ -19,6 +19,6 @@ export class MessageRepository {
 
     messages[id] = { id, content };
 
-    await writeFile('messages.json', JSON.stringify(messages)); 
+    await writeFile('messages.json', JSON.stringify(messages));
   }
 }
